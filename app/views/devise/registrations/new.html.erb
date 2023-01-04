@@ -1,35 +1,39 @@
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
   <div class="w-full bg-blue-500 p-1 text-white flex justify-between items-center mb-5">
     <%= link_to "", root_path, class: "fa-solid fa-chevron-left" %>
     <h2 class="uppercase">Register</h2>
     <div class="actions">
-      <%= f.submit "Next", class: "text-sm" %>
+      <%= f.submit "Next", class: "text-sm cursor-pointer" %>
     </div>
   </div>
-
+  <%= render "devise/shared/error_messages", resource: resource %>
   <div class="field p-2">
+    <%# <%= image_tag @user.image_url if @user.image %>
     <%= f.text_field :name,
         autofocus: true,
         autocomplete: "name",
         class: "text-sm text-gray-base w-full py-5 px-4 h-2 border border-gray-200 rounded mb-2",
-        placeholder: "Full name"
+        placeholder: "Full name",
+        :required => true
     %>
     <%= f.email_field :email,
         autofocus: true,
         autocomplete: "email",
         class: "text-sm text-gray-base w-full py-5 px-4 h-2 border border-gray-200 rounded mb-2",
-        placeholder: "Email"
+        placeholder: "Email",
+        :required => true
     %>
     <%= f.password_field :password,
         class: "text-sm text-gray-base w-full py-5 px-4 h-2 border border-gray-200 rounded mb-2",
         autocomplete: "new-password",
-        placeholder: "Password"
+        placeholder: "Password",
+        :required => true
     %>
     <%= f.password_field :password_confirmation,
         class: "text-sm text-gray-base w-full py-5 px-4 h-2 border border-gray-200 rounded mb-2",
         autocomplete: "new-password",
-        placeholder: "Confirm Password"
+        placeholder: "Confirm Password",
+        :required => true
     %>
   </div>
 <% end %>
