@@ -1,7 +1,9 @@
 <div class="mx-auto md:w-2/3 w-full">
-  <h1 class="font-bold text-4xl">New category</h1>
+  <div class="w-full flex justify-between items-center text-white bg-blue-400 p-2">
+    <i class=""></i>
+    <h2 class="uppercase">categories</h2>
+    <%= link_to "Back", categories_path, class: "uppercase text-xs" %>
+  </div>
 
-  <%= render "form", category: @category %>
-
-  <%= link_to 'Back to categories', categories_path, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+  <%= render "form", category: @category, class: "mt-5" %>
 </div>

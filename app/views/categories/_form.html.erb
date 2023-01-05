@@ -11,22 +11,22 @@
     </div>
   <% end %>
 
-  <div class="my-5">
-    <%= form.label :name %>
-    <%= form.text_field :name, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+  <div class="my-5 px-2">
+    <%= form.text_field :name,
+        placeholder: "Category name",
+        class: "text-sm text-gray-base w-full py-5 px-4 h-2 border border-gray-200 rounded mb-2"
+    %>
+    <%= form.text_field :icon,
+        placeholder: "Icon",
+        class: "text-sm text-gray-base w-full py-5 px-4 h-2 border border-gray-200 rounded mb-2"
+    %>
+    <%= form.text_field :user_id,
+        placeholder: "User",
+        class: "text-sm text-gray-base w-full py-5 px-4 h-2 border border-gray-200 rounded mb-2"
+    %>
   </div>
 
-  <div class="my-5">
-    <%= form.label :icon %>
-    <%= form.text_field :icon, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
-  </div>
-
-  <div class="my-5">
-    <%= form.label :user_id %>
-    <%= form.text_field :user_id, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
-  </div>
-
-  <div class="inline">
-    <%= form.submit class: "rounded-lg py-3 px-5 bg-blue-600 text-white inline-block font-medium cursor-pointer" %>
+  <div class="absolute bottom-0 left-0 w-full py-3 px-5 bg-blue-600">
+    <%= form.submit class: "w-full uppercase p-3 border-solid border-2 border-light-white-500 py-3 px-5 text-white inline-block font-medium cursor-pointer" %>
   </div>
 <% end %>

@@ -5,4 +5,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   include ImageUploader::Attachment(:image)
   validates :name, presence: true
+  has_many :categories
 end
