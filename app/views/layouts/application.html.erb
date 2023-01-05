@@ -14,9 +14,17 @@
 
   <body>
     <div class="container h-screen">
+      <% if notice.present? %>
+        <div class="w-full bg-green-500 text-white flex justify-center items-center">
+          <p class="notice p-1 fw-regular"><%= notice %></p>
+        </div>
+      <% end %>
+      <% if alert.present? %>
+        <div class="w-full bg-red-500 text-white flex  justify-center items-center">
+          <p class="alert p-1 fw-regular"><%= alert %></p>
+        </div>
+      <% end %>
       <%= yield %>
-        <p class= "notice p-4"><%= notice %></p>
-        <p class="alert p-4"><%= alert %></p>
     </div>
   </body>
 </html>
