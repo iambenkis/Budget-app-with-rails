@@ -1,0 +1,20 @@
+<div class="w-full">
+  <% if notice.present? %>
+    <p class="absolute bottom-0 left-0 py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
+  <% end %>
+
+  <div class="w-full flex justify-between items-center text-white bg-blue-400 p-2">
+    <i class="fa-solid fa-house"></i>
+    <h2 class="uppercase">categories</h2>
+    <%= link_to "", destroy_user_session_path, class: "fa-solid fa-right-from-bracket" %>
+  </div>
+
+  <div class="flex justify-between items-center">
+    <h1 class="font-bold text-4xl">Categories</h1>
+    <%= link_to 'New category', new_category_path, class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium" %>
+  </div>
+
+  <div id="categories" class="min-w-full">
+    <%= render @categories %>
+  </div>
+</div>

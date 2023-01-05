@@ -13,6 +13,10 @@
   </head>
 
   <body>
-    <%= yield %>
+    <div class="container h-screen">
+      <%= yield %>
+        <p class= "notice p-4"><%= notice %></p>
+        <p class="alert p-4"><%= alert %></p>
+    </div>
   </body>
 </html>
