@@ -1,15 +1,21 @@
-<div class="mx-auto md:w-2/3 w-full flex">
-  <div class="mx-auto">
-    <% if notice.present? %>
-      <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
-    <% end %>
+<div class="mx-auto md:w-2/3 w-full overflow-y-auto flex flex-col">
+  <div class="w-full flex justify-between items-center text-white bg-blue-400 p-2">
+    <%= link_to "", categories_path, class: "fa-solid fa-chevron-left" %>
+    <h2 class="uppercase"><%= @category.name %></h2>
+    <i></i>
+  </div>
+  <div class="flex w-full justify-between items-center p-3 border-b-2 border-gray-200">
+    <p class="font-thin">Total amount: </p>
+    <p class="font-semibold">$200</p>
+  </div>
+  <div class="mx-auto p-1">
 
-    <%= render @category %>
+  <%# <%= render @category %>
 
-    <%= link_to 'Edit this category', edit_category_path(@category), class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
-    <div class="inline-block ml-2">
-      <%= button_to 'Destroy this category', category_path(@category), method: :delete, class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 font-medium" %>
-    </div>
-    <%= link_to 'Back to categories', categories_path, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+  </div>
+  <div class="fixed w-screen bottom-0 left-0 p-4 bg-green-500">
+    <%= link_to 'Add new category',
+        new_category_path,
+        class: "uppercase w-full p-3 border-solid border-2 border-light-white-500  text-white block font-medium flex  justify-center items-center py-3 px-5" %>
   </div>
 </div>
