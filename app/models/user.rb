@@ -6,4 +6,5 @@ class User < ApplicationRecord
   include ImageUploader::Attachment(:image)
   validates :name, presence: true
   has_many :categories
+  has_many :deals
 end
