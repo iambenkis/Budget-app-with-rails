@@ -31,19 +31,6 @@ class DealsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /deals/1 or /deals/1.json
-  def update
-    respond_to do |format|
-      if @deal.update(deal_params)
-        format.html { redirect_to  @deal.categories.first, notice: "Deal was successfully updated." }
-        format.json { render :show, status: :ok, location: @deal }
-      else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @deal.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
   # DELETE /deals/1 or /deals/1.json
   def destroy
     @deal.destroy
@@ -62,6 +49,6 @@ class DealsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def deal_params
-      params.require(:deal).permit(:name, :amount,:author_id, category_ids: [])
+      params.require(:deal).permit(:name, :amount,:author_id, :category_id)
     end
 end

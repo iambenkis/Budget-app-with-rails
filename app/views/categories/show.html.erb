@@ -6,15 +6,15 @@
   </div>
   <div class="flex w-full justify-between items-center p-3 border-b-2 border-gray-200">
     <p class="font-thin">Total amount: </p>
-    <p class="font-semibold">$200</p>
+    <p class="font-semibold">$<%= @category.total_amount.round(2) %></p>
   </div>
   <div class="mx-auto p-1">
 
-  <%= render @category.deals %>
+  <%= render 'deals/index', locals: { deals: @deals } %>
 
   </div>
   <div class="fixed w-screen bottom-0 left-0 p-4 bg-green-500">
-    <%= link_to 'Add new category',
+    <%= link_to 'Add new Deal',
         new_deal_path,
         class: "uppercase w-full p-3 border-solid border-2 border-light-white-500  text-white block font-medium flex  justify-center items-center py-3 px-5" %>
   </div>

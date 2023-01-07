@@ -2,9 +2,7 @@
   <div class="w-full flex justify-between items-center text-white bg-blue-400 p-2">
     <%= link_to "", categories_path, class: "fa-solid fa-chevron-left" %>
     <h2 class="uppercase">Transaction</h2>
-    <div class="inline">
-      <%= form.submit class: "" %>
-  </div>
+    <i></i>
   </div>
   <% if deal.errors.any? %>
     <div id="error_explanation" class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">
@@ -25,4 +23,7 @@
     <%= form.number_field :author_id,id: :deal_author_id, placeholder: "Athor id", value: current_user.id, class: "text-sm text-gray-base w-full py-5 px-4 h-2 border border-gray-200 rounded mb-2" %>
   </div>
 
+  <div class="absolute bottom-0 left-0 w-full py-3 px-5 bg-blue-600">
+    <%= form.submit class: "w-full uppercase p-3 border-solid border-2 border-light-white-500 py-3 px-5 text-white inline-block font-medium cursor-pointer" %>
+  </div>
 <% end %>
