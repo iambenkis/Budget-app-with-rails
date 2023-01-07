@@ -1,17 +1,10 @@
-<div id="<%= dom_id deal %>">
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Name:</strong>
-    <%= deal.name %>
-  </p>
+<div id="<%= dom_id deal %>" class="w-full flex justify-between items-center border border-t-0 p-2 my-3">
+  <div class="">
+    <strong class="block font-medium mb-1"><%= deal.name %></strong>
+    <p><%= deal.created_at.strftime("%d %b %Y")%></p>
+  </div>
 
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Amount:</strong>
-    <%= deal.amount %>
+  <p class="">
+    <strong class="block font-medium mb-1">$<%= deal.amount %></strong>
   </p>
-
-  <% if action_name != "show" %>
-    <%= link_to "Show this deal", deal, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
-    <%= link_to 'Edit this deal', edit_deal_path(deal), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
-    <hr class="mt-6">
-  <% end %>
 </div>

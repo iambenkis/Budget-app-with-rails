@@ -4,7 +4,7 @@
         <%= image_tag(category.icon, class: "image w-20 h-20 mr-2") %>
         <div>
             <h3 class="font-bold capitalize text-black-300"><%= category.name %></h3>
-            <p><%= category.created_at.strftime("%d %b %Y")%></p>
+            <p><%= category.created_at.strftime("%d %b %Y") %></p>
         </div>
     </div>
     <p class="font-bold">$<%= category.total_amount %></p>

@@ -3,21 +3,18 @@ class CategoriesController < ApplicationController
   before_action :authenticate_user!
   # GET /categories or /categories.json
   def index
-    @categories = current_user.categories
+    @categories = current_user.categories.order(created_at: 'desc')
   end
 
   # GET /categories/1 or /categories/1.json
   def show
+    puts @category.inspect
     @deals = @category.deals.order(created_at: 'desc')
   end
 
   # GET /categories/new
   def new
     @category = Category.new
-  end
-
-  # GET /categories/1/edit
-  def edit
   end
 
   # POST /categories or /categories.json
@@ -48,7 +45,7 @@ class CategoriesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_category
-      @category = Category.includes(:deals).find(params[:id])
+      @category = Category.find(params[:id])
     end
 
     # Only allow a list of trusted parameters through.
