@@ -20,7 +20,6 @@
     <%= form.text_field :name, placeholder: "Deal name", class: "text-sm text-gray-base w-full py-5 px-4 h-2 border border-gray-200 rounded mb-2" %>
     <%= form.text_field :amount, placeholder: "Amount", class: "text-sm text-gray-base w-full py-5 px-4 h-2 border border-gray-200 rounded mb-2" %>
     <%= form.collection_select :category_ids, current_user.categories.order(:name), :id, :name, {}, { class: "input w-full text-sm text-gray-base py-5 px-4 border border-gray-200 rounded mb-2", multiple: true } %>
-    <%# <%= form.number_field :author_id, id: :deal_author_id, placeholder: "Athor id", value: current_user.id, class: "text-sm text-gray-base w-full py-5 px-4 h-2 border border-gray-200 rounded mb-2" %> %>
   </div>
 
   <div class="absolute bottom-0 left-0 w-full py-3 px-5 bg-blue-600">

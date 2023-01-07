@@ -29,6 +29,8 @@ gem "stimulus-rails"
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
 
+gem 'cancancan'
+
 gem 'shrine', '~> 3.3'
 
 gem 'image_processing', '~> 1.12', '>= 1.12.1'
