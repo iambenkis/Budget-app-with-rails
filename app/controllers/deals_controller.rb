@@ -13,9 +13,6 @@ class DealsController < ApplicationController
     @deal = Deal.new
   end
 
-  # GET /deals/1/edit
-  def edit
-  end
 
   # POST /deals or /deals.json
   def create
@@ -49,6 +46,7 @@ class DealsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def deal_params
-      params.require(:deal).permit(:name, :amount,:author_id, :category_id)
+      puts "My params !!!!!!!!!!!!!"
+      params.require(:deal).permit(:name, :amount, :author_id, :category_id)
     end
 end

@@ -3,7 +3,7 @@ class CategoriesController < ApplicationController
   before_action :authenticate_user!
   # GET /categories or /categories.json
   def index
-    @categories = Category.all.order(created_at: 'desc')
+    @categories = current_user.categories
   end
 
   # GET /categories/1 or /categories/1.json
@@ -22,7 +22,7 @@ class CategoriesController < ApplicationController
 
   # POST /categories or /categories.json
   def create
-    @category = Category.new(category_params)
+    @category = current_user.categories.new(category_params)
 
     respond_to do |format|
       if @category.save
@@ -53,10 +53,6 @@ class CategoriesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def category_params
-      params.require(:category).permit(:name, :icon, :user_id)
-    end
-
-    def after_sign_in_path_for(_resource)
-      root_path
+      params.require(:category).permit(:name, :icon)
     end
 end
