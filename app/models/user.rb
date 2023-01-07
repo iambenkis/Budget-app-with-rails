@@ -3,8 +3,9 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-  include ImageUploader::Attachment(:image)
-  validates :name, presence: true
+
+  validates :name, :email , presence: true
+  validates :email, uniqueness: true
   has_many :categories
   has_many :deals
 end
