@@ -20,8 +20,11 @@
         placeholder: "Icon",
         class: "text-sm text-gray-base w-full py-5 px-4 h-2 border border-gray-200 rounded mb-2"
     %>
-    <%= form.text_field :user_id,
-        placeholder: "User",
+    <%= form.number_field :user_id,
+        id: :category_user_id,
+        placeholder: "Athor id",
+        value: current_user.id,
+        type: :hidden,
         class: "text-sm text-gray-base w-full py-5 px-4 h-2 border border-gray-200 rounded mb-2"
     %>
   </div>

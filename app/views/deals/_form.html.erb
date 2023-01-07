@@ -1,4 +1,11 @@
 <%= form_with(model: deal, class: "contents") do |form| %>
+  <div class="w-full flex justify-between items-center text-white bg-blue-400 p-2">
+    <%= link_to "", categories_path, class: "fa-solid fa-chevron-left" %>
+    <h2 class="uppercase">Transaction</h2>
+    <div class="inline">
+      <%= form.submit class: "" %>
+  </div>
+  </div>
   <% if deal.errors.any? %>
     <div id="error_explanation" class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">
       <h2><%= pluralize(deal.errors.count, "error") %> prohibited this deal from being saved:</h2>
@@ -11,17 +18,11 @@
     </div>
   <% end %>
 
-  <div class="my-5">
-    <%= form.label :name %>
-    <%= form.text_field :name, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+  <div class="m-2">
+    <%= form.text_field :name, placeholder: "Deal name", class: "text-sm text-gray-base w-full py-5 px-4 h-2 border border-gray-200 rounded mb-2" %>
+    <%= form.text_field :amount, placeholder: "Amount", class: "text-sm text-gray-base w-full py-5 px-4 h-2 border border-gray-200 rounded mb-2" %>
+    <%= form.collection_select :category_id, current_user.categories.order(:name), :id, :name, {}, { class: "input w-full text-sm text-gray-base py-5 px-4 border border-gray-200 rounded mb-2", multiple: true } %>
+    <%= form.number_field :author_id,id: :deal_author_id, placeholder: "Athor id", value: current_user.id, class: "text-sm text-gray-base w-full py-5 px-4 h-2 border border-gray-200 rounded mb-2" %>
   </div>
 
-  <div class="my-5">
-    <%= form.label :amount %>
-    <%= form.text_field :amount, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
-  </div>
-
-  <div class="inline">
-    <%= form.submit class: "rounded-lg py-3 px-5 bg-blue-600 text-white inline-block font-medium cursor-pointer" %>
-  </div>
 <% end %>

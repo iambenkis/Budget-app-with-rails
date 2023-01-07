@@ -4,6 +4,12 @@
       <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
     <% end %>
 
+    <div class="fixed w-screen bottom-0 left-0 p-4 bg-green-500">
+      <%= link_to 'scan',
+        new_category_path,
+        class: "uppercase w-full p-3 border-solid border-2 border-light-white-500  text-white block font-medium flex  justify-center items-center py-3 px-5" %>
+    </div>
+
     <%= render @deal %>
 
     <%= link_to 'Edit this deal', edit_deal_path(@deal), class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>

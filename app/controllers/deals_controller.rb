@@ -3,12 +3,10 @@ class DealsController < ApplicationController
 
   # GET /deals or /deals.json
   def index
-    @deals = Deal.all
+    redirect_to categories_url
   end
 
   # GET /deals/1 or /deals/1.json
-  def show
-  end
 
   # GET /deals/new
   def new
@@ -22,14 +20,13 @@ class DealsController < ApplicationController
   # POST /deals or /deals.json
   def create
     @deal = Deal.new(deal_params)
+    @deal.author_id = current_user.id
 
     respond_to do |format|
       if @deal.save
-        format.html { redirect_to deal_url(@deal), notice: "Deal was successfully created." }
-        format.json { render :show, status: :created, location: @deal }
+        format.html { redirect_to @deal.categories.first, notice: 'Transaction was successfully added.' }
       else
         format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @deal.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -38,7 +35,7 @@ class DealsController < ApplicationController
   def update
     respond_to do |format|
       if @deal.update(deal_params)
-        format.html { redirect_to deal_url(@deal), notice: "Deal was successfully updated." }
+        format.html { redirect_to  @deal.categories.first, notice: "Deal was successfully updated." }
         format.json { render :show, status: :ok, location: @deal }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -52,7 +49,7 @@ class DealsController < ApplicationController
     @deal.destroy
 
     respond_to do |format|
-      format.html { redirect_to deals_url, notice: "Deal was successfully destroyed." }
+      format.html { redirect_to  @deal.categories.first, notice: "Deal was successfully destroyed." }
       format.json { head :no_content }
     end
   end
@@ -65,6 +62,6 @@ class DealsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def deal_params
-      params.require(:deal).permit(:name, :amount)
+      params.require(:deal).permit(:name, :amount,:author_id, category_ids: [])
     end
 end

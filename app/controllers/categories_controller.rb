@@ -8,6 +8,7 @@ class CategoriesController < ApplicationController
 
   # GET /categories/1 or /categories/1.json
   def show
+    @deals = @category.deals.order(created_at: 'desc')
   end
 
   # GET /categories/new
@@ -60,7 +61,7 @@ class CategoriesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_category
-      @category = Category.find(params[:id])
+      @category = Category.includes(:deals).find(params[:id])
     end
 
     # Only allow a list of trusted parameters through.
