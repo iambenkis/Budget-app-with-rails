@@ -1,4 +1,4 @@
-# 📖 [Recipe_App] <a name="about-project"></a>
+# 📖 [Budget_App] <a name="about-project"></a>
 
 >  We are building a mobile web application where you can manage your budget: you have a list of transactions associated with a category, so that you can see how much money you spent and on what.
 
@@ -138,9 +138,8 @@ If you like this project give as a star! ⭐️
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-- Hat tip to anyone whose code was used
-- Inspiration
 - Microverse
+- Original design idea by Gregoire Vella on [Behance](https://www.behance.net/gregoirevella).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -158,12 +157,3 @@ If you like this project give as a star! ⭐️
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- LICENSE -->
-
-## 📝 License <a name="license"></a>
-
-This project is [MIT](./LICENSE) licensed.
-
-_NOTE: we recommend using the [MIT license](https://choosealicense.com/licenses/mit/) - you can set it up quickly by [using templates available on GitHub](https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/adding-a-license-to-a-repository). You can also use [any other license](https://choosealicense.com/licenses/) if you wish._
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
