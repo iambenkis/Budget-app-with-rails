@@ -1,6 +1,5 @@
 class DealsController < ApplicationController
-  before_action :set_deal, only: %i[ show edit update destroy ]
-  id = 0
+  before_action :set_deal, only: %i[show edit update destroy]
   # GET /deals or /deals.json
   def index
     @deals = @categories.deals.order(created_at: 'desc')
@@ -9,7 +8,6 @@ class DealsController < ApplicationController
   def new
     @deal = Deal.new
   end
-
 
   # POST /deals or /deals.json
   def create
@@ -37,13 +35,14 @@ class DealsController < ApplicationController
   # end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    # def set_deal
-    #   @deal = Deal.find(params[:id])
-    # end
 
-    # Only allow a list of trusted parameters through.
-    def deal_params
-      params.require(:deal).permit(:name, :amount, category_ids: [])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  # def set_deal
+  #   @deal = Deal.find(params[:id])
+  # end
+
+  # Only allow a list of trusted parameters through.
+  def deal_params
+    params.require(:deal).permit(:name, :amount, category_ids: [])
+  end
 end
