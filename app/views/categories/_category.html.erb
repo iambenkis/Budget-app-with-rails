@@ -1,0 +1,12 @@
+<%= link_to category_url(category) do %>
+  <div class="p-2 mb-3 flex justify-between items-center border bg-white border-3 shadow-lg rounded">
+    <div class="flex items-center">
+        <%= image_tag(category.icon, class: "image w-20 h-20 mr-2") %>
+        <div>
+            <h3 class="font-bold capitalize text-black-300"><%= category.name %></h3>
+            <p><%= category.created_at.strftime("%d %b %Y") %></p>
+        </div>
+    </div>
+    <p class="font-bold">$<%= category.total_amount %></p>
+  </div>
+<%end%>
